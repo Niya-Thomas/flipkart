@@ -1,0 +1,111 @@
+/* Overall Container for Flex Layout */
+.mi {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds spacing between the cards and other content */
+    padding: 20px;
+  }
+  
+  /* Card Container Styling */
+  .grid3 {
+    width: 100%;
+    display: grid;
+   
+    justify-content: center;
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+  }
+  
+  /* Styling for Each Card */
+  .card {
+    width: 100%; /* Ensures that each card takes full width inside its column */
+    max-width: 300px; /* Set a max width to avoid too wide cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for card */
+    border-radius: 8px;
+    overflow: hidden; /* Prevents content from overflowing */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Card Image Styling */
+  .card-img-top {
+    object-fit: cover; /* Ensures images scale properly */
+    width: 100%; /* Makes image take full width of the card */
+    height: 180px; /* Fixed height for consistency */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1); /* Zoom effect for card images on hover */
+  }
+  
+  /* Card Body Styling */
+  .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Card Titles */
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Card Text */
+  .card-text {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Full Banner Image Styling */
+  .img-phone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .img-phone img {
+    width: 100%;
+    max-width: 1200px; /* Maximum width for large screens */
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* On small screens (mobile), cards should stack vertically */
+  @media (max-width: 576px) {
+    .grid3 .col {
+      flex: 0 0 100%; /* Cards take full width on small screens */
+    }
+  }
+  
+  /* On medium screens (tablet), cards should be in 2 columns */
+  @media (min-width: 576px) and (max-width: 992px) {
+    .grid3 .col {
+      flex: 0 0 50%; /* Cards take up half the width on tablet screens */
+    }
+  }
+  
+  /* On large screens (desktop), cards should be in 2 columns */
+  @media (min-width: 992px) {
+    .grid3 .col {
+      flex: 0 0 50%; /* Cards take up half the width */
+    }
+  }
+  
+  /* On extra large screens (large desktop), adjust card widths */
+  @media (min-width: 1200px) {
+    .grid3 .col {
+      flex: 0 0 25%; /* Cards take up 1/4th of the container width */
+    }
+  }
+  
